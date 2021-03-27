@@ -6,6 +6,12 @@ students[0] = studentName;
 studentName = null;
 ...
 Answer: There is one reference to the students array and that array has one reference to the string Peter Smith. Neither object is eligible for garbage collection. The array students is not eligible for garbage collection because it has one reference to the object studentName even though that object has been assigned the value null. The object studentName is not eligible either because students[0] still refers to it.
+个人理解：
+题中说的两个对象，指的是常量池中的"Peter Smith"和 实际在堆中的开辟的 students 指向的内存空间
+students 是指向数组内存空间的引用
+students[0] 和 studentName是指向 "Peter Smith"字符串常量的引用
+
+使用studentName.hashCode()与"Peter Smith".hashCode()获取的值相同
 
 
 2.Question:
